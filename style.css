@@ -5,6 +5,11 @@ body {
   font-family: lato, sans-serif;
 }
 
+* {
+  list-style: none;
+  outline: none;
+}
+
 .banner {
   width: 500px;
   margin: 0 auto;
@@ -12,15 +17,15 @@ body {
   text-align: right;
 }
 
-.banner img {
+.banner-img {
   width: 100%;
 }
 
-.banner .banner__inf {
+.banner .banner-inf {
   font-family: fantasy, cursive;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
   .banner {
     text-align: center;
   }
@@ -42,22 +47,13 @@ body {
   display: flex;
 }
 
-ul {
+#completed-tasks,
+#outstanding {
   margin: 0;
   padding: 0px;
 }
 
-li,
-.add-item__title {
-  list-style: none;
-}
-
-input,
-button {
-  outline: none;
-}
-
-button {
+.btn {
   background: none;
   border: 0px;
   color: #888;
@@ -67,13 +63,13 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.btn:hover {
   color: #3a3a3a;
 }
 
 /* heading */
-.add-item__title,
-.add-item__label[for='add-item__task'] {
+.add-item-title,
+.add-item-label[for="add-item-task"] {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -101,17 +97,17 @@ button:hover {
 }
 
 /* new task */
-label[for='add-item__task'] {
+.add-item-label {
   display: block;
   margin: 0 0 20px;
 }
 
-#add-item__task {
+#add-item-task {
   width: 318px;
 }
 
 /* task list */
-li {
+.item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -121,15 +117,15 @@ li {
   align-items: center;
 }
 
-li>* {
+.item > * {
   vertical-align: middle;
 }
 
-input[type="checkbox"] {
+.checkbox {
   margin: 0 10px;
 }
 
-li>label {
+.item > label {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
@@ -140,13 +136,13 @@ li>label {
   width: 226px;
 }
 
-.delete img {
+.deleteImg {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.delete img:hover {
+.deleteImg:hover {
   transform: rotateZ(0);
 }
 
@@ -157,11 +153,11 @@ li>label {
 }
 
 /* edit task */
-ul li input[type=text] {
+.item .text {
   display: none;
 }
 
-.editMode input[type=text] {
+.editMode .text {
   display: inline-block;
   width: 224px;
 }
